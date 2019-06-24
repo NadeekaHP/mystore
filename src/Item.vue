@@ -27,7 +27,7 @@ export default {
     },
     clickForProductDetails() {  
       //this.$router.push({name:'details'})    
-        window.open("https://www.google.com/")
+        window.open("demo.html")
   }
   },
   
