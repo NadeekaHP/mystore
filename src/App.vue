@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div id="app" class="container my-5">
+    
+    <div class="row mb-3">
+      <div class="col-md-9">
+        <img src="/assets/mylogo.png">
+        <!--<h1>My online store</h1>-->
+      </div>
+      
+      <div class="col-md-3">
+      <br><br>
+        <ShoppingCart />
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+      <Item
+        v-for="item in forSale"
+        :key="item.invId"
+        :invId="item.invId"
+        :name="item.name"
+        :image="item.image"
+        :price="item.price" />
+    </div>
+     
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Item from './Item.vue';
+import ShoppingCart from './ShoppingCart.vue';
 export default {
   name: 'app',
+  computed: {
+    forSale() { return this.$store.getters.forSale; },
+    inCart() { return this.$store.getters.inCart; },
+  },
   components: {
-    HelloWorld
-  }
-}
+    Item,
+    ShoppingCart,
+  },
+};
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /* Nothing for now */
 </style>
