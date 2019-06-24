@@ -13,7 +13,7 @@
       <div class="modal-body">
         <table class="table">
             <tbody>
-                <tr v-for="item in cart">
+                <tr v-for="item in cart" v-bind:key="item.invId">
                     <td>{{ item.name }}</td>
                     <td>{{ item.price | dollars }}</td>
                 </tr>
