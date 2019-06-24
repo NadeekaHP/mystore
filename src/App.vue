@@ -23,26 +23,28 @@
         :invId="item.invId"
         :name="item.name"
         :image="item.image"
-        :price="item.price" />
+        :price="item.price"
+        :discounted="item.discounted" />
     </div>
      
   </div>
 </template>
 
 <script>
-import Item from './Item.vue';
-import ShoppingCart from './ShoppingCart.vue';
-export default {
-  name: 'app',
-  computed: {
-    forSale() { return this.$store.getters.forSale; },
-    inCart() { return this.$store.getters.inCart; },
-  },
-  components: {
-    Item,
-    ShoppingCart,
-  },
-};
+  import Item from './Item.vue';
+  import ShoppingCart from './ShoppingCart.vue';
+  
+  export default {
+    name: 'app',
+    computed: {
+      forSale() { return this.$store.getters.forSale; },
+      inCart() { return this.$store.getters.inCart; },
+    },
+    components: {
+      Item,
+      ShoppingCart,
+    },
+  };
 </script>
 <style>
   /* Nothing for now */
