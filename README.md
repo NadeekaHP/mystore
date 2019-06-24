@@ -1,4 +1,4 @@
-# myproject
+# mystore
 
 ## Project setup
 ```
